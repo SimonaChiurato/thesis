@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="396.0" prefWidth="476.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PL.thesis.FXMLController">
+   <top>
+      <Label prefHeight="45.0" prefWidth="84.0" text="Tesi" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox prefHeight="134.0" prefWidth="476.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="31.0" prefWidth="476.0">
+               <children>
+                  <Label contentDisplay="CENTER" text="Seleziona il grafo che vuoi usare" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="15.0" right="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="boxTxt" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="476.0">
+               <children>
+                  <Label text="Clicca sul bottone per generare il grafo">
+                     <HBox.margin>
+                        <Insets left="15.0" right="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="btnCreaGrafo" alignment="CENTER" mnemonicParsing="false" onAction="#doGrafo" text="Clicca" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtResult" prefHeight="277.0" prefWidth="466.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </padding>
+            </TextArea>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
