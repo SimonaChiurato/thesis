@@ -1,6 +1,6 @@
 package model;
 
-public class Vertex {
+public class Vertex implements Comparable<Vertex>{
 	
 	private int id;
 	private int c;
@@ -41,6 +41,14 @@ public class Vertex {
 	public String toString() {
 		return "id=" + id ;
 	}
+
+	@Override
+	public int compareTo(Vertex o) {
+		return Integer.compare(this.getId(), o.getId());
+		
+	}
+
+	
 
 	
 	

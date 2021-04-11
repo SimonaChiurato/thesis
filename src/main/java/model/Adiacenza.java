@@ -4,13 +4,13 @@ package model;
 
 public class Adiacenza {
 	private Vertex partenza;
-	private Vertex a;
+	private Vertex arrivo;
 	private double edgeWeight;
 	
 	public Adiacenza(Vertex partenza, Vertex a, double edgeWeight) {
 		super();
 		this.partenza = partenza;
-		this.a = a;
+		this.arrivo = a;
 		this.edgeWeight = edgeWeight;
 	}
 	public Vertex getPartenza() {
@@ -19,11 +19,11 @@ public class Adiacenza {
 	public void setPartenza(Vertex partenza) {
 		this.partenza = partenza;
 	}
-	public Vertex getA() {
-		return a;
+	public Vertex getArrivo() {
+		return arrivo;
 	}
-	public void setA(Vertex a) {
-		this.a = a;
+	public void setArrivo(Vertex a) {
+		this.arrivo = a;
 	}
 	public double getEdgeWeight() {
 		return edgeWeight;
@@ -34,7 +34,7 @@ public class Adiacenza {
 	
 	@Override
 	public String toString() {
-		return  partenza + " è vicino a  " + a;
+		return  partenza + " è vicino a  " + arrivo;
 	}
 	
 

@@ -57,16 +57,20 @@ public class FXMLController {
 			}
 		}
     	model.leggiGrafo(this.boxTxt.getValue());
+    	model.getGrafoFittizio();
+    	
     	txtResult.appendText("Grafo creato con # vertici: " + this.model.vertici().size() + " # archi: "
 				+ this.model.archi().size() + " numero di vertici prima linea: "+this.model.getNumVertex()+"\n");
-    	txtResult.appendText(this.model.vertici().toString()+ "\n" + this.model.archi().toString()+"\n");
-    	String result= this.model.solveMe();
+    	//txtResult.appendText(this.model.vertici().toString()+ "\n" + this.model.archi().toString()+"\n");
+    	String result= this.model.solveMeCVC();
     	if( result=="") {
     		txtResult.appendText("Errore risoluzione problema");
     	}else {
     		txtResult.appendText(result);
     	}
     	
+    	txtResult.appendText("\nThe solution is a vertex cover? -->"+this.model.isVertexCover());
+    	txtResult.appendText("\nThe solution is a connected vertex cover? -->"+this.model.isConnectedVertexCover());
 
     }  	
     	
@@ -84,6 +88,7 @@ public class FXMLController {
 		this.boxTxt.getItems().clear();
     	this.boxTxt.getItems().add("prova.txt");
     	this.boxTxt.getItems().add("prova2.txt");
+    	this.boxTxt.getItems().add("prova3.txt");
     	this.boxTxt.getItems().add("Treni_Roma.txt");
 
 	}
