@@ -25,6 +25,7 @@ import ilog.concert.IloLinearNumExpr;
 import ilog.concert.IloNumVar;
 import ilog.concert.IloRange;
 import ilog.cplex.IloCplex;
+import ilog.cplex.IloCplex.Status;
 
 public class Model {
 
@@ -33,12 +34,47 @@ public class Model {
 	private List<Vertex> vertici = new ArrayList<Vertex>();
 	private Vertex verticeT;
 	private Map<Vertex, Vertex> visita;
+	
+
+	public Vertex getVerticeT() {
+		return verticeT;
+	}
+
+	public Map<Vertex, Vertex> getVisita() {
+		return visita;
+	}
+
+	public String getFormattedTime() {
+		return formattedTime;
+	}
+
+	public double getObjValue() {
+		return objValue;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public double getBestBound() {
+		return bestBound;
+	}
+
+	private String formattedTime;
+	private double objValue;
+	private Status status;
+	private double bestBound;
+
 
 	public Model() {
 		this.numVertex = 0;
 		this.grafo = null;
 		this.verticeT = null;
 		visita = new HashMap<>();
+		this.formattedTime=null;
+		this.objValue=0.0;
+		this.status=null;
+		this.bestBound=0.0;
 	}
 
 	/*
@@ -53,23 +89,29 @@ public class Model {
 		vertici = new ArrayList<Vertex>();
 		while ((linea = in.readLine()) != null) {
 			try {
+				linea=linea.trim();
 				if (nRow == 0 && linea.matches("[0-9]+")) {
 					this.numVertex = Integer.parseInt(linea);
+					//System.out.println(this.numVertex);
 
 				} else if (nRow != 0) {
+				
 					StringTokenizer st1 = new StringTokenizer(linea, ":");
 					String sVertex = st1.nextToken().trim();
+				
 					Vertex v = null;
 					for (Vertex p : vertici) {
 						if (p.getId() == Integer.parseInt(sVertex)) {
 							v = p;
 						}
 					}
-
+					
 					if (v == null) {
 						v = new Vertex(Integer.parseInt(sVertex), 1, false);
 						vertici.add(v);
 					}
+					
+					if(st1.hasMoreTokens()) {
 					String vicini = st1.nextToken();
 					StringTokenizer st2 = new StringTokenizer(vicini, " ");
 
@@ -98,6 +140,9 @@ public class Model {
 
 						}
 					}
+					}else {
+						grafo.addVertex(v);
+					}
 				}
 
 				nRow++;
@@ -108,6 +153,12 @@ public class Model {
 			}
 
 		}
+		/*if(grafo.vertexSet().size()==this.numVertex) {
+			System.out.println("ok");
+		}else {
+			System.out.println("shit"+grafo.vertexSet().size());
+		}
+		System.out.println(this.vertici());*/
 		in.close();
 	}
 
@@ -149,6 +200,7 @@ public class Model {
 		List<Vertex> result = new ArrayList<Vertex>();
 		result.addAll(this.grafo.vertexSet());
 		Collections.sort(result);
+	//	System.out.println(result);
 		return result;
 	}
 
@@ -184,7 +236,7 @@ public class Model {
 			try {
 				IloCplex cplex = new IloCplex();
 
-				IloNumVar[] x = new IloNumVar[this.numVertex]; // appartiene a 1 o 0
+				IloNumVar[] x = new IloNumVar[this.vertici().size()]; // appartiene a 1 o 0
 
 				IloLinearNumExpr obj = cplex.linearNumExpr();
 				for (Vertex v : this.grafo.vertexSet()) {
@@ -199,7 +251,7 @@ public class Model {
 				for (DefaultWeightedEdge e : this.grafo.edgeSet()) {
 					cplex.addGe(cplex.sum(x[grafo.getEdgeSource(e).getId()], x[grafo.getEdgeTarget(e).getId()]), 1);
 				}
-				Integer timeRunning = 10;
+				Integer timeRunning = 600;
 				cplex.setParam(IloCplex.DoubleParam.TimeLimit, timeRunning);
 				cplex.setParam(IloCplex.IntParam.Simplex.Display, 0);
 				cplex.setOut(null);
@@ -209,10 +261,13 @@ public class Model {
 				if (cplex.solve()) {
 					long end = System.currentTimeMillis();
 					Double time = (end - start) / Double.valueOf(1000);
-					String formattedTime = String.format("%.3f", time);
+					this.formattedTime = String.format("%.3f", time);
+					this.objValue= cplex.getObjValue();
+					this.status= cplex.getStatus();
+					this.bestBound= cplex.getBestObjValue();
 
-					result += "obj = " + cplex.getObjValue() + " time = " + formattedTime + " s status = "
-							+ cplex.getStatus() + " \n";
+					result += "obj = " + this.objValue + " time = " + formattedTime + " s status = "
+							+this.status + " \n";
 					// result+="0.0 the vertex isn't in the solution \n 1.0 the vertex is in the
 					// solution";
 					for (Vertex v : this.vertici()) {
@@ -229,7 +284,10 @@ public class Model {
 					result = "Model not solved";
 				}
 				// cplex.exportModel("model.lp");
+				cplex.clearModel();
+	        	cplex.endModel();
 				cplex.end();
+				cplex.close();
 				return result;
 
 			} catch (IloException exc) {
@@ -364,7 +422,7 @@ public class Model {
 				cplex.addEq(sumT, 1, "vincolo sommatoria ti=1");
 				cplex.addEq(cplex.sum(sumF0i, sumXi), 0, "sommatoria foi- somm xi=0");
 
-				Integer timeRunning = 10;
+				Integer timeRunning = 600;
 				cplex.setParam(IloCplex.DoubleParam.TimeLimit, timeRunning);
 				cplex.setParam(IloCplex.IntParam.Simplex.Display, 0);
 				cplex.setOut(null);
@@ -373,13 +431,16 @@ public class Model {
 				if (cplex.solve()) {
 					long end = System.currentTimeMillis();
 					Double time = (end - start) / Double.valueOf(1000);
-					String formattedTime = String.format("%.3f", time);
+					this.formattedTime = String.format("%.3f", time);
+					this.objValue= cplex.getObjValue();
+					this.status= cplex.getStatus();
+					this.bestBound= cplex.getBestObjValue();
 
-					result += "obj = " + cplex.getObjValue() + " time = " + formattedTime + " s status = "
-							+ cplex.getStatus() + " \n";
+					result += "obj = " + this.objValue + " time = " + formattedTime + " s status = "
+							+this.status + " \n";
 					// result+="0.0 the vertex isn't in the solution \n 1.0 the vertex is in the
 					// solution";
-					for (Vertex v : this.grafo.vertexSet()) {
+					for (Vertex v : this.vertici()) {
 						result += "\nVertex " + v.getId() + "--> "
 								+ String.format("%1.1f", Math.abs(cplex.getValue(x[v.getId()])));
 						if (cplex.getValue(t[v.getId()]) != 0.0) {
@@ -419,7 +480,11 @@ public class Model {
 
 				}
 				cplex.exportModel("model.lp");
+				cplex.clearModel();
+	        	cplex.endModel();
 				cplex.end();
+				cplex.close();
+				
 				return result;
 
 			} catch (IloException exc) {
@@ -430,25 +495,24 @@ public class Model {
 		return null;
 	}
 
-	public boolean isVertexCover() {
+	public String isVertexCover() {
 		for (DefaultWeightedEdge e : this.grafo.edgeSet()) {
 			if (grafo.getEdgeSource(e).isX() == false && grafo.getEdgeTarget(e).isX() == false) {
-				return false;
+				return "false";
 			}
 		}
-		return true;
+		return "true";
 	}
 
-	public boolean isConnectedVertexCover() {
+	public String isConnectedVertexCover() {
 		for (Vertex v : this.vertici) {
 			if (v.isX() == true) {
 				if(this.trovaPercorso(v)==null) {
-					return false;
-				}
-
+					return "false";
 			}
 		}
-		return true;
+		}
+		return "true";
 	}
 
 	public List<Vertex> trovaPercorso(Vertex finale) {

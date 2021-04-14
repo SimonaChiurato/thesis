@@ -90,7 +90,9 @@ public class FXMLController {
     	this.boxTxt.getItems().add("prova2.txt");
     	this.boxTxt.getItems().add("prova3.txt");
     	this.boxTxt.getItems().add("Treni_Roma.txt");
-
+    	this.boxTxt.getItems().add("celegance_453_2025_conv.txt");
+    	this.boxTxt.getItems().add("anna_138_493_conv.txt");
+    	this.boxTxt.getItems().add("yeast1.txt");
 	}
 }
 
