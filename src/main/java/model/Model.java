@@ -11,16 +11,19 @@ import java.util.Map;
 import java.util.Set;
 import java.util.StringTokenizer;
 import org.jgrapht.Graphs;
+import org.jgrapht.alg.connectivity.ConnectivityInspector;
 import org.jgrapht.event.ConnectedComponentTraversalEvent;
 import org.jgrapht.event.EdgeTraversalEvent;
 import org.jgrapht.event.TraversalListener;
 import org.jgrapht.event.VertexTraversalEvent;
+import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 import org.jgrapht.graph.SimpleWeightedGraph;
 import org.jgrapht.traverse.BreadthFirstIterator;
 
 import ilog.concert.IloException;
+import ilog.concert.IloLPMatrix;
 import ilog.concert.IloLinearNumExpr;
 import ilog.concert.IloNumVar;
 import ilog.concert.IloRange;
@@ -34,6 +37,24 @@ public class Model {
 	private List<Vertex> vertici = new ArrayList<Vertex>();
 	private Vertex verticeT;
 	private Map<Vertex, Vertex> visita;
+	private String formattedTime;
+	private double objValue;
+	private Status status;
+	private double bestBound;
+	private int numArchi;
+
+
+	public Model() {
+		this.numVertex = 0;
+		this.grafo = null;
+		this.verticeT = null;
+		visita = new HashMap<>();
+		this.formattedTime=null;
+		this.objValue=0.0;
+		this.status=null;
+		this.bestBound=0.0;
+		this.numArchi=0;
+	}
 	
 
 	public Vertex getVerticeT() {
@@ -59,29 +80,22 @@ public class Model {
 	public double getBestBound() {
 		return bestBound;
 	}
+	public int getNumArchi() {
+		return this.numArchi;
+	}
 
-	private String formattedTime;
-	private double objValue;
-	private Status status;
-	private double bestBound;
-
-
-	public Model() {
-		this.numVertex = 0;
-		this.grafo = null;
-		this.verticeT = null;
-		visita = new HashMap<>();
-		this.formattedTime=null;
-		this.objValue=0.0;
-		this.status=null;
-		this.bestBound=0.0;
+	public SimpleWeightedGraph<Vertex, DefaultWeightedEdge> getGrafo() {
+		return grafo;
+	}
+	public int getNumVertex() {
+		return numVertex;
 	}
 
 	/*
 	 * Formato file: numero vertici 0: 1 1: 0 2 --> vicini 2: grafo parte da vertice
 	 * zero, vertice fittizio ultimo vertice
 	 */
-	public void leggiGrafo(String nomeFile) throws IOException {
+	public void leggiGrafo1(String nomeFile) throws IOException {
 		BufferedReader in = new BufferedReader(new FileReader(nomeFile));
 		String linea;
 		this.grafo = new SimpleWeightedGraph<Vertex, DefaultWeightedEdge>(DefaultWeightedEdge.class);
@@ -161,10 +175,111 @@ public class Model {
 		System.out.println(this.vertici());*/
 		in.close();
 	}
+	
+	public void leggiGrafo2(String nomeFile) throws IOException {
+		BufferedReader in = new BufferedReader(new FileReader(nomeFile));
+		String linea;
+		this.grafo = new SimpleWeightedGraph<Vertex, DefaultWeightedEdge>(DefaultWeightedEdge.class);
+		//Integer nRow = 0;
+		vertici = new ArrayList<Vertex>();
+		while ((linea = in.readLine()) != null) {
+			try {
+				linea=linea.trim();
+			
+		/*	if (nRow == 0 && linea.matches("p [a-z]+ [0-9]+ [0-9]+")) {
+					String[] valori= linea.split(" ");
+					this.numVertex = Integer.parseInt(valori[2]);
+					this.numArchi= Integer.parseInt(valori[3]);
+					
+					System.out.println(this.numVertex);
+					//System.out.println(this.numArchi);
+					nRow++;
 
-	public SimpleWeightedGraph<Vertex, DefaultWeightedEdge> getGrafo() {
-		return grafo;
+				} else if (nRow != 0) {*/
+				
+				
+				if(!linea.contains("%")) {
+					String[] valori= linea.split(" ");
+				//System.out.println(valori[0]+" "+valori[1]);
+					int idV1 =  Integer.parseInt(valori[0])-1;
+					int idV2 =  Integer.parseInt(valori[1])-1;
+					if(idV1!=idV2) {
+						
+					
+					Vertex v = null;
+					Vertex v2= null;
+					for (Vertex p : vertici) {
+						if (p.getId() == idV1) {
+							v = p;
+						}else if(p.getId()==idV2) {
+							v2=p;
+						}
+					}
+					
+					if (v == null && v2== null) {
+						v= new Vertex(idV1, 1, false);
+						v2= new Vertex(idV2, 1, false);
+						Graphs.addEdgeWithVertices(grafo, v, v2, 1);
+						
+					}else if( v != null && v2== null) {
+						v2= new Vertex(idV2, 1, false);
+						grafo.addVertex(v2);
+						Graphs.addEdge(grafo, v, v2, 1);
+					}else if( v == null && v2!= null) {
+						v= new Vertex(idV1, 1, false);
+						grafo.addVertex(v);
+						Graphs.addEdge(grafo, v2, v, 1);
+					}else if( v != null && v2 != null && this.grafo.getEdge(v, v2) == null) {
+						
+						Graphs.addEdge(grafo, v, v2, 1);
+					}
+					
+					if(!this.vertici.contains(v)) {
+					vertici.add(v);
+					}
+					if(!this.vertici.contains(v2)) {
+						vertici.add(v2);
+						} 
+					
+					}else {
+					//	System.out.println(idV1+" "+idV2);
+					}
+				//}
+
+//				nRow++;
+				}
+				
+			} catch (Exception e) {
+				// System.err.println("Errore");
+				e.printStackTrace();
+
+			}
+			
+		}
+
+			
+	System.out.println(this.grafo.edgeSet());
+Collections.sort(this.vertici);
+			System.out.println();
+			System.out.println(this.vertici);
+			int zero=0;
+	try {
+		for(Vertex v: this.vertici) {
+			
+			if(v.getId()!=zero) {
+				System.out.println(v.getId()+" "+zero);
+			}
+			zero++;
+		}
+		
+	}catch(IndexOutOfBoundsException e){
+		System.out.println(e+" "+zero);
 	}
+	
+		in.close();
+	}
+
+
 
 	public SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> getGrafoFittizio() {
 		SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> grafoFittizio = new SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge>(
@@ -183,18 +298,16 @@ public class Model {
 			// this.getGrafo().getEdgeTarget(e));
 		}
 
-		/*
-		 * for (DefaultWeightedEdge e : grafoFittizio.edgeSet()) { System.out.println(
-		 * grafoFittizio.getEdgeSource(e)+" "+ grafoFittizio.getEdgeTarget(e)); }
+		
+/*		 for (DefaultWeightedEdge e : grafoFittizio.edgeSet()) { System.out.println(
+		 grafoFittizio.getEdgeSource(e)+" "+ grafoFittizio.getEdgeTarget(e)); }
 		 */
 
 		return grafoFittizio;
 
 	}
 
-	public int getNumVertex() {
-		return numVertex;
-	}
+
 
 	public List<Vertex> vertici() {
 		List<Vertex> result = new ArrayList<Vertex>();
@@ -231,16 +344,20 @@ public class Model {
 	}
 
 	public String solveMeVC() {
+		this.formattedTime=null;
+		this.objValue=0.0;
+		this.status=null;
+		this.bestBound=0.0;
 		String result = "";
 		if (this.grafo != null) {
 			try {
 				IloCplex cplex = new IloCplex();
 
-				IloNumVar[] x = new IloNumVar[this.vertici().size()]; // appartiene a 1 o 0
+				IloNumVar[] x = cplex.boolVarArray(this.vertici().size()); // appartiene a 1 o 0
 
 				IloLinearNumExpr obj = cplex.linearNumExpr();
 				for (Vertex v : this.grafo.vertexSet()) {
-					x[v.getId()] = cplex.boolVar();
+					//x[v.getId()] = cplex.boolVar();
 					obj.addTerm(v.getC(), x[v.getId()]);
 				}
 
@@ -251,7 +368,7 @@ public class Model {
 				for (DefaultWeightedEdge e : this.grafo.edgeSet()) {
 					cplex.addGe(cplex.sum(x[grafo.getEdgeSource(e).getId()], x[grafo.getEdgeTarget(e).getId()]), 1);
 				}
-				Integer timeRunning = 600;
+				Integer timeRunning = 300;
 				cplex.setParam(IloCplex.DoubleParam.TimeLimit, timeRunning);
 				cplex.setParam(IloCplex.IntParam.Simplex.Display, 0);
 				cplex.setOut(null);
@@ -299,31 +416,38 @@ public class Model {
 	}
 
 	public String solveMeCVC() {
+		this.formattedTime=null;
+		this.objValue=0.0;
+		this.status=null;
+		this.bestBound=0.0;
 		String result = "";
 		int n = this.vertici().size(); // cardinalità V
-		int m = this.archi().size(); // cardinalità E
 		int l = this.getGrafoFittizio().edgeSet().size();
 		if (this.grafo != null) {
+			
 			try {
 				IloCplex cplex = new IloCplex();
 
-				IloNumVar[] x = new IloNumVar[n];
+				IloNumVar[] x	=cplex.boolVarArray(n);
+				
 				IloNumVar[][] y = new IloNumVar[n][n];
 				IloNumVar[][] f = new IloNumVar[l][l];
-				IloNumVar[] t = new IloNumVar[n];
+				IloNumVar[] t = cplex.boolVarArray(n);
 
 				IloLinearNumExpr obj = cplex.linearNumExpr();
 				for (Vertex v : this.vertici()) {
-					x[v.getId()] = cplex.boolVar();
-					t[v.getId()] = cplex.boolVar("t"); // appartiene a 1 o 0
+				
+				//x[v.getId()] = cplex.boolVar();
+					//t[v.getId()] = cplex.boolVar("t"); // appartiene a 1 o 0
 					obj.addTerm(v.getC(), x[v.getId()]);
 				}
 
 				for (DefaultWeightedEdge e : this.archi()) {
+				
 					y[grafo.getEdgeSource(e).getId()][grafo.getEdgeTarget(e).getId()] = cplex.boolVar("y");
 				}
 				for (DefaultWeightedEdge e : this.getGrafoFittizio().edgeSet()) {
-
+					//System.out.println("f "+grafo.getEdgeSource(e).getId()+" "+grafo.getEdgeTarget(e).getId());
 					f[grafo.getEdgeSource(e).getId()][grafo.getEdgeTarget(e).getId()] = cplex.numVar(0,
 							Double.MAX_VALUE, "f");
 					// if (grafo.getEdgeSource(e).getId() == this.vertici.size()) {
@@ -384,12 +508,11 @@ public class Model {
 					num_exp.addTerm(-1, x[v.getId()]);
 					cplex.addLe(num_exp, 0, " vincolo ti-xi<=0");
 
-					num_exp = cplex.linearNumExpr();
-					num_exp.addTerm(1, f[this.vertici.size()][v.getId()]);
-					num_exp.addTerm(-n, t[v.getId()]);
-					cplex.addLe(num_exp, 0, " vincolo f0i-n*ti<=0");
+					
+					
+					
 
-					sumF0i.addTerm(1, f[this.vertici.size()][v.getId()]);
+					sumF0i.addTerm(1, f[this.vertici().size()][v.getId()]);
 					sumXi.addTerm(-1, x[v.getId()]);
 					sumT.addTerm(1, t[v.getId()]);
 
@@ -405,14 +528,21 @@ public class Model {
 
 					sumFij = cplex.linearNumExpr();
 					for (Vertex u : this.viciniFittizi(v)) {
-						if (u.getId() != this.vertici.size()) {
-							// System.out.println(v.getId()+" "+u.getId()+" doppio");
+					//	System.out.println(u.getId());
+						if (u.getId() != this.vertici().size()) {
+						//	 System.out.println(v.getId()+" "+u.getId()+" doppio "+ Integer.compare(u.getId(), this.vertici.size())+"   "+this.vertici.size());
 							sumFij.addTerm(1, f[v.getId()][u.getId()]);
 							sumFij.addTerm(-1, f[u.getId()][v.getId()]);
 						} else {
 							sumFij.addTerm(-1, f[u.getId()][v.getId()]);
-							// System.out.println(v.getId()+" "+u.getId()+" singolo");
+							//System.out.println(v.getId()+" "+u.getId()+" singolo");
 						}
+						
+					//System.out.println(v.getId());
+						num_exp = cplex.linearNumExpr();
+						num_exp.addTerm(1, f[this.vertici().size()][v.getId()]);
+						num_exp.addTerm(-n, t[v.getId()]);
+						cplex.addLe(num_exp, 0, " vincolo f0i-n*ti<=0");
 
 					}
 					// System.out.println(cplex.sum(sumFij,x[v.getId()]));
@@ -421,8 +551,8 @@ public class Model {
 				}
 				cplex.addEq(sumT, 1, "vincolo sommatoria ti=1");
 				cplex.addEq(cplex.sum(sumF0i, sumXi), 0, "sommatoria foi- somm xi=0");
-
-				Integer timeRunning = 600;
+				System.out.println("pre conto");
+				Integer timeRunning = 300;
 				cplex.setParam(IloCplex.DoubleParam.TimeLimit, timeRunning);
 				cplex.setParam(IloCplex.IntParam.Simplex.Display, 0);
 				cplex.setOut(null);
@@ -434,12 +564,14 @@ public class Model {
 					this.formattedTime = String.format("%.3f", time);
 					this.objValue= cplex.getObjValue();
 					this.status= cplex.getStatus();
+					//System.out.println(cplex.getStatus());
 					this.bestBound= cplex.getBestObjValue();
 
 					result += "obj = " + this.objValue + " time = " + formattedTime + " s status = "
 							+this.status + " \n";
 					// result+="0.0 the vertex isn't in the solution \n 1.0 the vertex is in the
 					// solution";
+				
 					for (Vertex v : this.vertici()) {
 						result += "\nVertex " + v.getId() + "--> "
 								+ String.format("%1.1f", Math.abs(cplex.getValue(x[v.getId()])));
@@ -459,6 +591,7 @@ public class Model {
 					// Y è GESTITA CORRETTAMENTE
 
 					for (DefaultWeightedEdge e : this.archi()) {
+					
 						if (cplex.getValue(y[grafo.getEdgeSource(e).getId()][grafo.getEdgeTarget(e).getId()]) != 0.0) {
 							result += "\nY value: Vertex (" + grafo.getEdgeSource(e).getId() + " "
 									+ grafo.getEdgeTarget(e).getId() + ")-->" + String.format("%1.1f", cplex.getValue(
@@ -476,10 +609,12 @@ public class Model {
 					}
 
 				} else {
-					result = "Model not solved -->" + cplex.getStatus();
+					this.status=cplex.getStatus();
 
+					result = "Model not solved -->" + this.getStatus();
+				
 				}
-				cplex.exportModel("model.lp");
+			//cplex.exportModel("model.lp");
 				cplex.clearModel();
 	        	cplex.endModel();
 				cplex.end();
@@ -505,12 +640,19 @@ public class Model {
 	}
 
 	public String isConnectedVertexCover() {
-		for (Vertex v : this.vertici) {
+		int num=0;
+		for (Vertex v : this.vertici()) {
+			
 			if (v.isX() == true) {
 				if(this.trovaPercorso(v)==null) {
 					return "false";
+			}else {
+				num++;
 			}
 		}
+		}
+		if(num==this.vertici().size()) {
+			return "false";
 		}
 		return "true";
 	}
@@ -572,4 +714,9 @@ public class Model {
 		return percorso;
 	}
 
+	public  List<Set<Vertex>> connesse() {
+		ConnectivityInspector<Vertex, DefaultWeightedEdge> ci = new ConnectivityInspector<Vertex, DefaultWeightedEdge>(this.grafo);
+		
+		return ci.connectedSets();
+	}
 }

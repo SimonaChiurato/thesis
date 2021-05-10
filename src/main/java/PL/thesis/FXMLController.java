@@ -42,7 +42,7 @@ public class FXMLController {
     		 this.txtResult.setText("Il file txt non è stato selezionato");
     		 return;
     	}
-    	BufferedReader in = new BufferedReader(new FileReader(this.boxTxt.getValue()));
+   	BufferedReader in = new BufferedReader(new FileReader(this.boxTxt.getValue()));
 		String linea;
 		while ((linea = in.readLine()) != null) {
 			try {
@@ -56,17 +56,17 @@ public class FXMLController {
 				e.printStackTrace();
 			}
 		}
-    	model.leggiGrafo(this.boxTxt.getValue());
+    	model.leggiGrafo1(this.boxTxt.getValue());
     	model.getGrafoFittizio();
     	
     	txtResult.appendText("Grafo creato con # vertici: " + this.model.vertici().size() + " # archi: "
 				+ this.model.archi().size() + " numero di vertici prima linea: "+this.model.getNumVertex()+"\n");
-    	//txtResult.appendText(this.model.vertici().toString()+ "\n" + this.model.archi().toString()+"\n");
-    	String result= this.model.solveMeCVC();
+    	txtResult.appendText(this.model.vertici().toString()+ "\n" + this.model.archi().toString()+"\n");
+    	String result= this.model.solveMeVC();
     	if( result=="") {
     		txtResult.appendText("Errore risoluzione problema");
     	}else {
-    		txtResult.appendText(result);
+    		txtResult.appendText(result); 
     	}
     	
     	txtResult.appendText("\nThe solution is a vertex cover? -->"+this.model.isVertexCover());
@@ -93,6 +93,8 @@ public class FXMLController {
     	this.boxTxt.getItems().add("celegance_453_2025_conv.txt");
     	this.boxTxt.getItems().add("anna_138_493_conv.txt");
     	this.boxTxt.getItems().add("yeast1.txt");
+    	this.boxTxt.getItems().add("C:\\Users\\Simona\\Desktop\\PoliTo\\TESI\\nuove_istanze\\bio-DM-LC.edges");
+    		
 	}
 }
 
