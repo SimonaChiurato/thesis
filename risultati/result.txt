@@ -1,0 +1,141 @@
+Risultati istanze con algoritmo VC e CVC
+       |NOME ISTANZA                                 | |TEMPO       | |VALORE SOLUZIONE| |BEST BOUND  | |STATO       | |NUMERO NODI | |NUMERO ARCHI| |IS VERTEX COVER | |IS CONNECTED VERTEX COVER|
+
+1 VC:  |anna_138_493_conv.txt                        | |0,036       | |58,000000   |     |58,000000   | |Optimal     | |138         | |493         | |true        |     |false       |
+1 CVC: |anna_138_493_conv.txt                        | |0,428       | |58,000000   |     |58,000000   | |Optimal     | |138         | |493         | |true        |     |true        |
+
+2 VC:  |attiro_59_conv.txt                           | |0,021       | |32,000000   |     |32,000000   | |Optimal     | |59          | |128         | |true        |     |false       |
+2 CVC: |attiro_59_conv.txt                           | |0,183       | |33,000000   |     |33,000000   | |Optimal     | |59          | |128         | |true        |     |true        |
+
+3 VC:  |Bovine.txt                                   | |0,005       | |13,000000   |     |13,000000   | |Optimal     | |121         | |190         | |true        |     |false       |
+3 CVC: |Bovine.txt                                   | |0,272       | |14,000000   |     |14,000000   | |Optimal     | |121         | |190         | |true        |     |true        |
+
+4 VC:  |celegance_453_2025_conv.txt                  | |0,053       | |249,000000  |     |249,000000  | |Optimal     | |453         | |2025        | |true        |     |false       |
+4 CVC: |celegance_453_2025_conv.txt                  | |6,184       | |250,000000  |     |250,000000  | |Optimal     | |453         | |2025        | |true        |     |true        |
+
+5 VC:  |cerevisae_1458_1948_conv.txt                 | |0,059       | |456,000000  |     |456,000000  | |Optimal     | |1458        | |1948        | |true        |     |false       |
+5 CVC: |cerevisae_1458_1948_conv.txt                 | |14,605      | |517,000000  |     |517,000000  | |Optimal     | |1458        | |1948        | |true        |     |true        |
+
+6 VC:  |chesapeake_39_conv.txt                       | |0,009       | |22,000000   |     |22,000000   | |Optimal     | |39          | |170         | |true        |     |false       |
+6 CVC: |chesapeake_39_conv.txt                       | |0,069       | |22,000000   |     |22,000000   | |Optimal     | |39          | |170         | |true        |     |true        |
+
+7 VC:  |Circuit.txt                                  | |0,061       | |126,000000  |     |126,000000  | |Optimal     | |252         | |399         | |true        |     |false       |
+7 CVC: |Circuit.txt                                  | |2,242       | |142,000000  |     |142,000000  | |Optimal     | |252         | |399         | |true        |     |true        |
+
+8 VC:  |david_87_406_conv.txt                        | |0,014       | |51,000000   |     |51,000000   | |Optimal     | |87          | |406         | |true        |     |false       |
+8 CVC: |david_87_406_conv.txt                        | |0,246       | |51,000000   |     |51,000000   | |Optimal     | |87          | |406         | |true        |     |true        |
+
+9 VC:  |dolphins_62_conv.txt                         | |0,007       | |34,000000   |     |34,000000   | |Optimal     | |62          | |159         | |true        |     |false       |
+9 CVC: |dolphins_62_conv.txt                         | |0,172       | |36,000000   |     |36,000000   | |Optimal     | |62          | |159         | |true        |     |true        |
+
+10 VC:  |Ecoli.txt                                    | |0,004       | |72,000000  |     |72,000000   | |Optimal     | |328         | |456         | |true        |     |false       |
+10 CVC: |Ecoli.txt                                    | |1,917       | |85,000000  |     |85,000000   | |Optimal     | |328         | |456         | |true        |     |true        |
+
+11 VC:  |Erdos_collaboration_main_429_1312_conv.txt   | |0,039       | |216,000000 |     |216,000000  | |Optimal     | |429         | |1312        | |true        |     |false       |
+11 CVC: |Erdos_collaboration_main_429_1312_conv.txt   | |4,095       | |219,000000 |     |219,000000  | |Optimal     | |429         | |1312        | |true        |     |true        |
+
+12 VC:  |Harvard_Web_500_2636_conv.txt                | |0,035       | |184,000000 |     |184,000000  | |Optimal     | |500         | |2043        | |true        |     |false       |
+12 CVC: |Harvard_Web_500_2636_conv.txt                | |6,106       | |184,000000 |     |184,000000  | |Optimal     | |500         | |2043        | |true        |     |true        |
+
+13 VC:  |high-tech_33_conv.txt                        | |0,008       | |17,000000  |     |17,000000   | |Optimal     | |33          | |91          | |true        |     |false       |
+13 CVC: |high-tech_33_conv.txt                        | |0,032       | |17,000000  |     |17,000000   | |Optimal     | |33          | |91          | |true        |     |true        |
+
+14 VC:  |homer_max_comp_542_1619_conv.txt             | |0,043       | |213,000000 |     |213,000000  | |Optimal     | |542         | |1619        | |true        |     |false       |
+14 CVC: |homer_max_comp_542_1619_conv.txt             | |1,789       | |217,000000 |     |217,000000  | |Optimal     | |542         | |1619        | |true        |     |true        |
+
+15 VC:  |hpylori_main_706_1392_conv.txt               | |0,007       | |196,000000 |     |196,000000  | |Optimal     | |706         | |1392        | |true        |     |false       |
+15 CVC: |hpylori_main_706_1392_conv.txt               | |2,987       | |211,000000 |     |211,000000  | |Optimal     | |706         | |1392        | |true        |     |true        |
+
+16 VC:  |huck_main_69_297_conv.txt                    | |0,019       | |44,000000  |     |44,000000   | |Optimal     | |69          | |297         | |true        |     |false       |
+16 CVC: |huck_main_69_297_conv.txt                    | |0,098       | |44,000000  |     |44,000000   | |Optimal     | |69          | |297         | |true        |     |true        |
+
+17 VC:  |humanDiseasome.txt                           | |0,077       | |285,000000 |     |285,000000  | |Optimal     | |516         | |1188        | |true        |     |false       |
+17 CVC: |humanDiseasome.txt                           | |2,312       | |289,000000 |     |289,000000  | |Optimal     | |516         | |1188        | |true        |     |true        |
+
+18 VC:  |ieeebus_118_conv.txt                         | |0,011       | |61,000000  |     |61,000000   | |Optimal     | |118         | |179         | |true        |     |false       |
+18 CVC: |ieeebus_118_conv.txt                         | |0,217       | |66,000000  |     |66,000000   | |Optimal     | |118         | |179         | |true        |     |true        |
+
+19 VC:  |jean_main_77_254_conv.txt                    | |0,009       | |42,000000  |     |42,000000   | |Optimal     | |77          | |254         | |true        |     |false       |
+19 CVC: |jean_main_77_254_conv.txt                    | |0,093       | |42,000000  |     |42,000000   | |Optimal     | |77          | |254         | |true        |     |true        |
+
+20 VC:  |karate_34_conv.txt                           | |0,010       | |14,000000  |     |14,000000   | |Optimal     | |34          | |78          | |true        |     |false       |
+20 CVC: |karate_34_conv.txt                           | |0,030       | |14,000000  |     |14,000000   | |Optimal     | |34          | |78          | |true        |     |true        |
+
+21 VC:  |kreb_62_conv.txt                             | |0,008       | |29,000000  |     |29,000000   | |Optimal     | |62          | |153         | |true        |     |false       |
+21 CVC: |kreb_62_conv.txt                             | |0,050       | |29,000000  |     |29,000000   | |Optimal     | |62          | |153         | |true        |     |true        |
+
+22 VC:  |LindenStrasse_max_comp_232_conv.txt          | |0,021       | |92,000000  |     |92,000000   | |Optimal     | |232         | |303         | |true        |     |false       |
+22 CVC: |LindenStrasse_max_comp_232_conv.txt          | |0,905       | |104,000000 |     |104,000000  | |Optimal     | |232         | |303         | |true        |     |true        |
+
+23 VC:  |matrix_50_2_u_conn_conv.txt                  | |0,015       | |27,000000  |     |27,000000   | |Optimal     | |50          | |100         | |true        |     |false       |
+23 CVC: |matrix_50_2_u_conn_conv.txt                  | |0,125       | |29,000000  |     |29,000000   | |Optimal     | |50          | |100         | |true        |     |true        |
+
+24 VC:  |matrix_50_3_u_conn_conv.txt                  | |0,031       | |29,000000  |     |29,000000   | |Optimal     | |50          | |125         | |true        |     |false       |
+24 CVC: |matrix_50_3_u_conn_conv.txt                  | |0,149       | |29,000000  |     |29,000000   | |Optimal     | |50          | |125         | |true        |     |true        |
+
+25 VC:  |matrix_50_4_u_conn_conv.txt                  | |0,025       | |31,000000  |     |31,000000   | |Optimal     | |50          | |150         | |true        |     |false       |
+25 CVC: |matrix_50_4_u_conn_conv.txt                  | |0,246       | |31,000000  |     |31,000000   | |Optimal     | |50          | |150         | |true        |     |true        |
+
+26 VC:  |matrix_BA_50_2_2_conv.txt                    | |0,007       | |23,000000  |     |23,000000   | |Optimal     | |50          | |97          | |true        |     |false       |
+26 CVC: |matrix_BA_50_2_2_conv.txt                    | |0,043       | |23,000000  |     |23,000000   | |Optimal     | |50          | |97          | |true        |     |true        |
+
+27 VC:  |matrix_BA_50_3_5_conv.txt                    | |0,007       | |26,000000  |     |26,000000   | |Optimal     | |50          | |144         | |true        |     |false       |
+27 CVC: |matrix_BA_50_3_5_conv.txt                    | |0,141       | |26,000000  |     |26,000000   | |Optimal     | |50          | |144         | |true        |     |true        |
+
+28 VC:  |matrix_BA_50_4_5_conv.txt                    | |0,009       | |30,000000  |     |30,000000   | |Optimal     | |50          | |190         | |true        |     |false       |
+28 CVC: |matrix_BA_50_4_5_conv.txt                    | |0,117       | |30,000000  |     |30,000000   | |Optimal     | |50          | |190         | |true        |     |true        |
+
+29 VC:  |matrix_SW_100_200_025_conv.txt               | |0,008       | |58,000000  |     |58,000000   | |Optimal     | |100         | |200         | |true        |     |false       |
+29 CVC: |matrix_SW_100_200_025_conv.txt               | |0,457       | |60,000000  |     |60,000000   | |Optimal     | |100         | |200         | |true        |     |true        |
+
+30 VC:  |matrix_SW_100_200_050_conv.txt               | |0,022       | |55,000000  |     |55,000000   | |Optimal     | |100         | |200         | |true        |     |false       |
+30 CVC: |matrix_SW_100_200_050_conv.txt               | |0,407       | |60,000000  |     |60,000000   | |Optimal     | |100         | |200         | |true        |     |true        |
+
+31 VC:  |matrix_SW_100_200_075_conv.txt               | |0,009       | |51,000000  |     |51,000000   | |Optimal     | |100         | |200         | |true        |     |false       |
+31 CVC: |matrix_SW_100_200_075_conv.txt               | |0,303       | |56,000000  |     |56,000000   | |Optimal     | |100         | |200         | |true        |     |true        |
+
+32 VC:  |mexican_35_conv.txt                          | |0,006       | |22,000000  |     |22,000000   | |Optimal     | |35          | |117         | |true        |     |false       |
+32 CVC: |mexican_35_conv.txt                          | |0,038       | |22,000000  |     |22,000000   | |Optimal     | |35          | |117         | |true        |     |true        |
+
+33 VC:  |NetScience_max_comp_379_914_conv.txt         | |0,048       | |214,000000 |     |214,000000  | |Optimal     | |379         | |914         | |true        |     |false       |
+33 CVC: |NetScience_max_comp_379_914_conv.txt         | |3,066       | |214,000000 |     |214,000000  | |Optimal     | |379         | |914         | |true        |     |true        |
+
+34 VC:  |prison_67_conv.txt                           | |0,008       | |41,000000  |     |41,000000   | |Optimal     | |67          | |142         | |true        |     |false       |
+34 CVC: |prison_67_conv.txt                           | |0,085       | |42,000000  |     |42,000000   | |Optimal     | |67          | |142         | |true        |     |true        |
+
+35 VC:  |sanjuansur_75_conv.txt                       | |0,008       | |40,000000  |     |40,000000   | |Optimal     | |75          | |144         | |true        |     |false       |
+35 CVC: |sanjuansur_75_conv.txt                       | |0,084       | |41,000000  |     |41,000000   | |Optimal     | |75          | |144         | |true        |     |true        |
+
+36 VC:  |santafe_118_conv.txt                         | |0,019       | |53,000000  |     |53,000000   | |Optimal     | |118         | |200         | |true        |     |false       |
+36 CVC: |santafe_118_conv.txt                         | |0,137       | |53,000000  |     |53,000000   | |Optimal     | |118         | |200         | |true        |     |true        |
+
+37 VC:  |sawmill_36_conv.txt                          | |0,008       | |19,000000  |     |19,000000   | |Optimal     | |36          | |62          | |true        |     |false       |
+37 CVC: |sawmill_36_conv.txt                          | |0,050       | |19,000000  |     |19,000000   | |Optimal     | |36          | |62          | |true        |     |true        |
+
+38 VC:  |SmallWorld_max_comp_233_994_conv.txt         | |0,015       | |84,000000  |     |84,000000   | |Optimal     | |233         | |994         | |true        |     |false       |
+38 CVC: |SmallWorld_max_comp_233_994_conv.txt         | |1,164       | |84,000000  |     |84,000000   | |Optimal     | |233         | |994         | |true        |     |true        |
+
+39 VC:  |tailor_shopT1_39_conv.txt                    | |0,007       | |22,000000  |     |22,000000   | |Optimal     | |39          | |158         | |true        |     |false       |
+39 CVC: |tailor_shopT1_39_conv.txt                    | |0,043       | |22,000000  |     |22,000000   | |Optimal     | |39          | |158         | |true        |     |true        |
+
+40 VC:  |tailor_shopT2_39_conv.txt                    | |0,009       | |26,000000  |     |26,000000   | |Optimal     | |39          | |223         | |true        |     |false       |
+40 CVC: |tailor_shopT2_39_conv.txt                    | |0,050       | |26,000000  |     |26,000000   | |Optimal     | |39          | |223         | |true        |     |true        |
+
+41 VC:  |Treni_Roma.txt                               | |0,031       | |129,000000 |     |129,000000  | |Optimal     | |255         | |272         | |true        |     |false       |
+41 CVC: |Treni_Roma.txt                               | |300,030     | |236,000000 |     |220,128029  | |Feasible    | |255         | |272         | |true        |     |true        |
+
+42 VC:  |u500-1_conv.txt                              | |300,023     | |300,000000 |     |289,237403  | |Feasible    | |500         | |1450        | |true        |     |false       |
+42 CVC: |u500-1_conv.txt                              | |300,149     | |305,000000 |     |288,337334  | |Feasible    | |500         | |1450        | |true        |     |true        |
+
+43 VC:  |u500-2_conv.txt                              | |300,015     | |329,000000 |     |303,974698  | |Feasible    | |500         | |2079        | |true        |     |false       |
+43 CVC: |u500-2_conv.txt                              | |300,098     | |336,000000 |     |295,690582  | |Feasible    | |500         | |2079        | |true        |     |true        |
+
+44 VC:  |u500-3_conv.txt                              | |300,015     | |319,000000 |     |299,268298  | |Feasible    | |500         | |1782        | |true        |     |false       |
+44 CVC: |u500-3_conv.txt                              | |300,028     | |329,000000 |     |292,715715  | |Feasible    | |500         | |1782        | |true        |     |true        |
+
+45 VC:  |USAir97.txt                                  | |0,041       | |149,000000 |     |149,000000  | |Optimal     | |332         | |2126        | |true        |     |false       |
+45 CVC: |USAir97.txt                                  | |4,036       | |149,000000 |     |149,000000  | |Optimal     | |332         | |2126        | |true        |     |true        |
+
+46 VC:  |USAir97_332_conv.txt                         | |0,057       | |149,000000 |     |149,000000  | |Optimal     | |332         | |2126        | |true        |     |false       |
+46 CVC: |USAir97_332_conv.txt                         | |4,981       | |149,000000 |     |149,000000  | |Optimal     | |332         | |2126        | |true        |     |true        |
+

@@ -1,0 +1,68 @@
+Risultati istanze con algoritmo CVC modificato da euristica: 10%  k=4 connesso con i 5 vicini di grado 
+  : | NOME ISTANZA                           | |TEMPO       | |VALORE SOLUZIONE| |BEST BOUND  | |STATO       | |NUMERO NODI | |NUMERO ARCHI| |IS VERTEX COVER| |IS CONNECTED VERTEX COVER     |
+1 CVC: |bcspwr06.mtx                         | |300,210     | |807,000000      | |787,006190  | |Feasible    | |1454        | |1923        | |true           | |true        |
+
+2 CVC: |bcspwr09.mtx                         | |300,251     | |914,000000      | |897,844312  | |Feasible    | |1723        | |2394        | |true           | |true        |
+
+3 CVC: |bibd_11_5.mtx                        | |1,755       | |55,000000       | |55,000000   | |Optimal     | |462         | |4560        | |true           | |true        |
+
+4 CVC: |celegans_connectome_multiplex.edges  | |0,161       | |27,000000       | |27,000000   | |Optimal     | |279         | |783         | |true           | |true        |
+
+5 CVC: |ch7-6-b1.mtx                         | |2,655       | |59,000000       | |59,000000   | |Optimal     | |630         | |1243        | |true           | |true        |
+
+6 CVC: |dwa512.mtx                           | |300,151     | |505,000000      | |258,000000  | |Feasible    | |512         | |1004        | |true           | |true        |
+
+7 CVC: |email-enron-only.mtx                 | |0,301       | |87,000000       | |87,000000   | |Optimal     | |143         | |623         | |true           | |true        |
+
+8 CVC: |email-univ.edges                     | |22,679      | |599,000000      | |599,000000  | |Optimal     | |1133        | |5451        | |true           | |true        |
+
+9 CVC: |GD96_a.mtx                           | |302,177     | |757,000000      | |742,721941  | |Feasible    | |1096        | |1677        | |true           | |true        |
+
+10 CVC: |ia-email-univ.mtx                   | |14,610      | |599,000000      | |599,000000  | |Optimal     | |1133        | |5451        | |true           | |true        |
+
+11 CVC: |inf-USAir97.mtx                     | |0,587       | |149,000000      | |149,000000  | |Optimal     | |332         | |2126        | |true           | |true        |
+
+12 CVC: |Kapferer-Tailor-Shop_multiplex.edges| |0,026       | |4,000000        | |4,000000    | |Optimal     | |39          | |137         | |true           | |true        |
+
+13 CVC: |lp_agg.mtx                          | |13,407      | |128,000000      | |128,000000  | |Optimal     | |615         | |2407        | |true           | |true        |
+
+14 CVC: |lp_etamacro.mtx                     | |5,260       | |368,000000      | |368,000000  | |Optimal     | |816         | |2489        | |true           | |true        |
+
+15 CVC: |lp_scfxm1.mtx                       | |6,671       | |239,000000      | |239,000000  | |Optimal     | |600         | |2729        | |true           | |true        |
+
+16 CVC: |lp_standgub.mtx                     | |133,248     | |288,000000      | |288,000000  | |Optimal     | |1383        | |3339        | |true           | |true        |
+
+17 CVC: |n4c6-b15.mtx                        | |2,925       | |64,000000       | |64,000000   | |Optimal     | |920         | |959         | |true           | |true        |
+
+18 CVC: |nemsafm.mtx                         | |23,899      | |236,000000      | |236,000000  | |Optimal     | |2348        | |2725        | |true           | |true        |
+
+19 CVC: |out.brunson_revolution_revolution   | |0,052       | |11,000000       | |11,000000   | |Optimal     | |136         | |157         | |true           | |true        |
+
+20 CVC: |out.dolphins                        | |0,158       | |36,000000       | |36,000000   | |Optimal     | |62          | |159         | |true           | |true        |
+
+21 CVC: |out.edit-astwikibooks               | |1,623       | |82,000000       | |82,000000   | |Optimal     | |276         | |307         | |true           | |true        |
+
+22 CVC: |out.edit-chwiktionary               | |0,235       | |31,000000       | |31,000000   | |Optimal     | |67          | |82          | |true           | |true        |
+
+23 CVC: |out.edit-cowikibooks                | |0,324       | |63,000000       | |63,000000   | |Optimal     | |256         | |323         | |true           | |true        |
+
+24 CVC: |out.edit-nawikibooks                | |0,121       | |49,000000       | |49,000000   | |Optimal     | |250         | |277         | |true           | |true        |
+
+25 CVC: |out.edit-vowikibooks                | |1,897       | |79,000000       | |79,000000   | |Optimal     | |305         | |345         | |true           | |true        |
+
+26 CVC: |out.hiv                             | |0,021       | |18,000000       | |18,000000   | |Optimal     | |40          | |41          | |true           | |true        |
+
+27 CVC: |out.iceland                         | |0,041       | |19,000000       | |19,000000   | |Optimal     | |75          | |114         | |true           | |true        |
+
+28 CVC: |out.maayan-faa                      | |24,159      | |632,000000      | |632,000000  | |Optimal     | |1226        | |2408        | |true           | |true        |
+
+29 CVC: |out.moreno_crime_crime              | |4,863       | |353,000000      | |353,000000  | |Optimal     | |829         | |1473        | |true           | |true        |
+
+30 CVC: |prisoninter_st.txt                  | |0,079       | |42,000000       | |42,000000   | |Optimal     | |67          | |142         | |true           | |true        |
+
+31 CVC: |s208_st.txt                         | |0,471       | |69,000000       | |69,000000   | |Optimal     | |122         | |189         | |true           | |true        |
+
+32 CVC: |s838_st.txt                         | |272,471     | |288,000000      | |288,000000  | |Optimal     | |512         | |819         | |true           | |true        |
+
+33 CVC: |USairport500.txt                    | |0,841       | |202,000000      | |202,000000  | |Optimal     | |500         | |2980        | |true           | |true        |
+

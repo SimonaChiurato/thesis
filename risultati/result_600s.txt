@@ -1,0 +1,12 @@
+Risultati istanze con algoritmo VC e CVC
+       |NOME ISTANZA      | |TEMPO       | |VALORE SOLUZIONE    | |BEST BOUND  | |STATO       | |NUMERO NODI | |NUMERO ARCHI| |IS VERTEX COVER| |IS CONNECTED VERTEX COVER     |
+
+1 VC:  |u500-1_conv.txt   | |600,032     | |298,000000  |         |290,942739  | |Feasible    | |500         | |1450        | |true        |    |false       |
+1 CVC: |u500-1_conv.txt   | |600,080     | |302,000000  |         |291,367737  | |Feasible    | |500         | |1450        | |true        |    |true        |
+
+2 VC:  |u500-2_conv.txt   | |600,019     | |327,000000  |         |304,938547  | |Feasible    | |500         | |2079        | |true        |    |false       |
+2 CVC: |u500-2_conv.txt   | |600,093     | |336,000000  |         |298,947199  | |Feasible    | |500         | |2079        | |true        |    |true        |
+
+3 VC:  |u500-3_conv.txt   | |600,026     | |318,000000  |         |300,177390  | |Feasible    | |500         | |1782        | |true        |    |false       |
+3 CVC: |u500-3_conv.txt   | |600,148     | |328,000000  |         |296,531216  | |Feasible    | |500         | |1782        | |true        |    |true        |
+

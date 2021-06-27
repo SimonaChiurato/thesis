@@ -1,0 +1,94 @@
+Risultati istanze con algoritmo CVC modificato da euristica: 20%  k=4 connesso con i 5 vicini di grado
+|     NOME ISTANZA                        | |TEMPO       | |VALORE SOLUZIONE| |BEST BOUND  | |STATO       | |NUMERO NODI | |NUMERO ARCHI| |IS VERTEX COVER| |IS CONNECTED VERTEX COVER     |
+1 CVC: |anna_138_493_conv.txt               | |0,320       | |58,000000       | |58,000000   | |Optimal     | |138         | |493         | |true           | |true        |
+
+2 CVC: |attiro_59_conv.txt                  | |0,188       | |33,000000       | |33,000000   | |Optimal     | |59          | |128         | |true           | |true        |
+
+3 CVC: |Bovine.txt                          | |0,049       | |18,000000       | |18,000000   | |Optimal     | |121         | |190         | |true           | |true        |
+
+4 CVC: |celegance_453_2025_conv.txt         | |1,603       | |250,000000      | |250,000000  | |Optimal     | |453         | |2025        | |true           | |true        |
+
+5 CVC: |cerevisae_1458_1948_conv.txt        | |10,030      | |517,000000      | |517,000000  | |Optimal     | |1458        | |1948        | |true           | |true        |
+
+6 CVC: |chesapeake_39_conv.txt              | |0,064       | |22,000000       | |22,000000   | |Optimal     | |39          | |170         | |true           | |true        |
+
+7 CVC: |Circuit.txt                         | |4,482       | |142,000000      | |142,000000  | |Optimal     | |252         | |399         | |true           | |true        |
+
+8 CVC: |david_87_406_conv.txt               | |0,337       | |51,000000       | |51,000000   | |Optimal     | |87          | |406         | |true           | |true        |
+
+9 CVC: |dolphins_62_conv.txt                | |0,114       | |36,000000       | |36,000000   | |Optimal     | |62          | |159         | |true           | |true        |
+
+10 CVC: |Ecoli.txt                           | |0,581       | |86,000000       | |86,000000   | |Optimal     | |328         | |456         | |true           | |true        |
+
+11 CVC: |Erdos_collaboration_main_429_1312_conv.txt| |0,706       | |220,000000      | |220,000000  | |Optimal     | |429         | |1312        | |true           | |true        |
+
+12 CVC: |Harvard_Web_500_2636_conv.txt       | |0,888       | |185,000000      | |185,000000  | |Optimal     | |500         | |2043        | |true           | |true        |
+
+13 CVC: |high-tech_33_conv.txt               | |0,061       | |17,000000       | |17,000000   | |Optimal     | |33          | |91          | |true           | |true        |
+
+14 CVC: |homer_max_comp_542_1619_conv.txt    | |2,435       | |217,000000      | |217,000000  | |Optimal     | |542         | |1619        | |true           | |true        |
+
+15 CVC: |hpylori_main_706_1392_conv.txt      | |3,307       | |214,000000      | |214,000000  | |Optimal     | |706         | |1392        | |true           | |true        |
+
+16 CVC: |huck_main_69_297_conv.txt           | |0,066       | |44,000000       | |44,000000   | |Optimal     | |69          | |297         | |true           | |true        |
+
+17 CVC: |humanDiseasome.txt                  | |2,019       | |289,000000      | |289,000000  | |Optimal     | |516         | |1188        | |true           | |true        |
+
+18 CVC: |ieeebus_118_conv.txt                | |0,348       | |66,000000       | |66,000000   | |Optimal     | |118         | |179         | |true           | |true        |
+
+19 CVC: |jean_main_77_254_conv.txt           | |0,098       | |42,000000       | |42,000000   | |Optimal     | |77          | |254         | |true           | |true        |
+
+20 CVC: |karate_34_conv.txt                  | |0,023       | |14,000000       | |14,000000   | |Optimal     | |34          | |78          | |true           | |true        |
+
+21 CVC: |kreb_62_conv.txt                    | |0,110       | |29,000000       | |29,000000   | |Optimal     | |62          | |153         | |true           | |true        |
+
+22 CVC: |LindenStrasse_max_comp_232_conv.txt | |0,317       | |104,000000      | |104,000000  | |Optimal     | |232         | |303         | |true           | |true        |
+
+23 CVC: |matrix_50_2_u_conn_conv.txt         | |0,143       | |29,000000       | |29,000000   | |Optimal     | |50          | |100         | |true           | |true        |
+
+24 CVC: |matrix_50_3_u_conn_conv.txt         | |0,114       | |29,000000       | |29,000000   | |Optimal     | |50          | |125         | |true           | |true        |
+
+25 CVC: |matrix_50_4_u_conn_conv.txt         | |0,101       | |32,000000       | |32,000000   | |Optimal     | |50          | |150         | |true           | |true        |
+
+26 CVC: |matrix_BA_50_2_2_conv.txt           | |0,024       | |23,000000       | |23,000000   | |Optimal     | |50          | |97          | |true           | |true        |
+
+27 CVC: |matrix_BA_50_3_5_conv.txt           | |0,055       | |26,000000       | |26,000000   | |Optimal     | |50          | |144         | |true           | |true        |
+
+28 CVC: |matrix_BA_50_4_5_conv.txt           | |0,090       | |30,000000       | |30,000000   | |Optimal     | |50          | |190         | |true           | |true        |
+
+29 CVC: |matrix_SW_100_200_025_conv.txt      | |0,400       | |60,000000       | |60,000000   | |Optimal     | |100         | |200         | |true           | |true        |
+
+30 CVC: |matrix_SW_100_200_050_conv.txt      | |0,178       | |60,000000       | |60,000000   | |Optimal     | |100         | |200         | |true           | |true        |
+
+31 CVC: |matrix_SW_100_200_075_conv.txt      | |0,210       | |58,000000       | |58,000000   | |Optimal     | |100         | |200         | |true           | |true        |
+
+32 CVC: |mexican_35_conv.txt                 | |0,036       | |22,000000       | |22,000000   | |Optimal     | |35          | |117         | |true           | |true        |
+
+33 CVC: |NetScience_max_comp_379_914_conv.txt| |3,609       | |214,000000      | |214,000000  | |Optimal     | |379         | |914         | |true           | |true        |
+
+34 CVC: |prison_67_conv.txt                  | |0,053       | |42,000000       | |42,000000   | |Optimal     | |67          | |142         | |true           | |true        |
+
+35 CVC: |sanjuansur_75_conv.txt              | |0,094       | |41,000000       | |41,000000   | |Optimal     | |75          | |144         | |true           | |true        |
+
+36 CVC: |santafe_118_conv.txt                | |0,177       | |53,000000       | |53,000000   | |Optimal     | |118         | |200         | |true           | |true        |
+
+37 CVC: |sawmill_36_conv.txt                 | |0,028       | |19,000000       | |19,000000   | |Optimal     | |36          | |62          | |true           | |true        |
+
+38 CVC: |SmallWorld_max_comp_233_994_conv.txt| |0,369       | |85,000000       | |85,000000   | |Optimal     | |233         | |994         | |true           | |true        |
+
+39 CVC: |tailor_shopT1_39_conv.txt           | |0,040       | |22,000000       | |22,000000   | |Optimal     | |39          | |158         | |true           | |true        |
+
+40 CVC: |tailor_shopT2_39_conv.txt           | |0,058       | |26,000000       | |26,000000   | |Optimal     | |39          | |223         | |true           | |true        |
+
+41 CVC: |Treni_Roma.txt                      | |300,082     | |236,000000      | |227,750000  | |Feasible    | |255         | |272         | |true           | |true        |
+
+42 CVC: |u500-1_conv.txt                     | |300,074     | |304,000000      | |293,208979  | |Feasible    | |500         | |1450        | |true           | |true        |
+
+43 CVC: |u500-2_conv.txt                     | |300,138     | |336,000000      | |307,951060  | |Feasible    | |500         | |2079        | |true           | |true        |
+
+44 CVC: |u500-3_conv.txt                     | |300,389     | |323,000000      | |301,633228  | |Feasible    | |500         | |1782        | |true           | |true        |
+
+45 CVC: |USAir97.txt                         | |0,729       | |149,000000      | |149,000000  | |Optimal     | |332         | |2126        | |true           | |true        |
+
+46 CVC: |USAir97_332_conv.txt                | |0,554       | |149,000000      | |149,000000  | |Optimal     | |332         | |2126        | |true           | |true        |
+

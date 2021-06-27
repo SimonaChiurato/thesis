@@ -1,0 +1,67 @@
+  : |     NOME ISTANZA                        | |TEMPO       | |VALORE SOLUZIONE| |BEST BOUND  | |STATO       | |NUMERO NODI | |NUMERO ARCHI| |IS VERTEX COVER| |IS CONNECTED VERTEX COVER     |
+1 CVC: |bcspwr06.mtx                        | |300,205     | |809,000000      | |789,500000  | |Feasible    | |1454        | |1923        | |true           | |true        |
+
+2 CVC: |bcspwr09.mtx                        | |300,237     | |919,000000      | |907,006297  | |Feasible    | |1723        | |2394        | |true           | |true        |
+
+3 CVC: |bibd_11_5.mtx                       | |1,131       | |55,000000       | |55,000000   | |Optimal     | |462         | |4560        | |true           | |true        |
+
+4 CVC: |celegans_connectome_multiplex.edges | |0,141       | |27,000000       | |27,000000   | |Optimal     | |279         | |783         | |true           | |true        |
+
+5 CVC: |ch7-6-b1.mtx                        | |0,045       | |63,000000       | |63,000000   | |Optimal     | |630         | |1243        | |true           | |true        |
+
+6 CVC: |dwa512.mtx                          | |300,157     | |505,000000      | |258,000000  | |Feasible    | |512         | |1004        | |true           | |true        |
+
+7 CVC: |email-enron-only.mtx                | |0,385       | |90,000000       | |90,000000   | |Optimal     | |143         | |623         | |true           | |true        |
+
+8 CVC: |email-univ.edges                    | |26,945      | |620,000000      | |620,000000  | |Optimal     | |1133        | |5451        | |true           | |true        |
+
+9 CVC: |GD96_a.mtx                          | |300,403     | |756,000000      | |748,010959  | |Feasible    | |1096        | |1677        | |true           | |true        |
+
+10 CVC: |ia-email-univ.mtx                   | |26,783      | |620,000000      | |620,000000  | |Optimal     | |1133        | |5451        | |true           | |true        |
+
+11 CVC: |inf-USAir97.mtx                     | |0,888       | |161,000000      | |161,000000  | |Optimal     | |332         | |2126        | |true           | |true        |
+
+12 CVC: |Kapferer-Tailor-Shop_multiplex.edges| |0,017       | |4,000000        | |4,000000    | |Optimal     | |39          | |137         | |true           | |true        |
+
+13 CVC: |lp_agg.mtx                          | |2,326       | |145,000000      | |145,000000  | |Optimal     | |615         | |2407        | |true           | |true        |
+
+14 CVC: |lp_etamacro.mtx                     | |4,197       | |368,000000      | |368,000000  | |Optimal     | |816         | |2489        | |true           | |true        |
+
+15 CVC: |lp_scfxm1.mtx                       | |11,748      | |247,000000      | |247,000000  | |Optimal     | |600         | |2729        | |true           | |true        |
+
+16 CVC: |lp_standgub.mtx                     | |55,266      | |289,000000      | |289,000000  | |Optimal     | |1383        | |3339        | |true           | |true        |
+
+17 CVC: |n4c6-b15.mtx                        | |3,730       | |65,000000       | |65,000000   | |Optimal     | |920         | |959         | |true           | |true        |
+
+18 CVC: |nemsafm.mtx                         | |37,643      | |237,000000      | |237,000000  | |Optimal     | |2348        | |2725        | |true           | |true        |
+
+19 CVC: |out.brunson_revolution_revolution   | |0,040       | |12,000000       | |12,000000   | |Optimal     | |136         | |157         | |true           | |true        |
+
+20 CVC: |out.dolphins                        | |0,138       | |36,000000       | |36,000000   | |Optimal     | |62          | |159         | |true           | |true        |
+
+21 CVC: |out.edit-astwikibooks               | |0,607       | |84,000000       | |84,000000   | |Optimal     | |276         | |307         | |true           | |true        |
+
+22 CVC: |out.edit-chwiktionary               | |0,072       | |31,000000       | |31,000000   | |Optimal     | |67          | |82          | |true           | |true        |
+
+23 CVC: |out.edit-cowikibooks                | |0,306       | |68,000000       | |68,000000   | |Optimal     | |256         | |323         | |true           | |true        |
+
+24 CVC: |out.edit-nawikibooks                | |0,870       | |50,000000       | |50,000000   | |Optimal     | |250         | |277         | |true           | |true        |
+
+25 CVC: |out.edit-vowikibooks                | |0,342       | |83,000000       | |83,000000   | |Optimal     | |305         | |345         | |true           | |true        |
+
+26 CVC: |out.hiv                             | |0,028       | |19,000000       | |19,000000   | |Optimal     | |40          | |41          | |true           | |true        |
+
+27 CVC: |out.iceland                         | |0,039       | |23,000000       | |23,000000   | |Optimal     | |75          | |114         | |true           | |true        |
+
+28 CVC: |out.maayan-faa                      | |20,845      | |639,000000      | |639,000000  | |Optimal     | |1226        | |2408        | |true           | |true        |
+
+29 CVC: |out.moreno_crime_crime              | |4,781       | |365,000000      | |365,000000  | |Optimal     | |829         | |1473        | |true           | |true        |
+
+30 CVC: |prisoninter_st.txt                  | |0,126       | |42,000000       | |42,000000   | |Optimal     | |67          | |142         | |true           | |true        |
+
+31 CVC: |s208_st.txt                         | |0,491       | |69,000000       | |69,000000   | |Optimal     | |122         | |189         | |true           | |true        |
+
+32 CVC: |s838_st.txt                         | |4,690       | |288,000000      | |288,000000  | |Optimal     | |512         | |819         | |true           | |true        |
+
+33 CVC: |USairport500.txt                    | |0,848       | |201,000000      | |201,000000  | |Optimal     | |500         | |2980        | |true           | |true        |
+
