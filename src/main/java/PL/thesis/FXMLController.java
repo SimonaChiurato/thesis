@@ -38,7 +38,7 @@ public class FXMLController {
     	
     	this.txtResult.clear();
     	
-    	if(this.boxTxt.getValue()== null) {
+    /*	if(this.boxTxt.getValue()== null) {
     		 this.txtResult.setText("Il file txt non è stato selezionato");
     		 return;
     	}
@@ -55,14 +55,14 @@ public class FXMLController {
 			    //System.err.println("Errore");
 				e.printStackTrace();
 			}
-		}
-    	model.leggiGrafo1(this.boxTxt.getValue());
+		}*/
+    	model.leggiGrafo2(this.boxTxt.getValue());
     	model.getGrafoFittizio();
     	
     	txtResult.appendText("Grafo creato con # vertici: " + this.model.vertici().size() + " # archi: "
 				+ this.model.archi().size() + " numero di vertici prima linea: "+this.model.getNumVertex()+"\n");
-    	txtResult.appendText(this.model.vertici().toString()+ "\n" + this.model.archi().toString()+"\n");
-    	String result= this.model.solveMeVC();
+    //	txtResult.appendText(this.model.vertici().toString()+ "\n" + this.model.archi().toString()+"\n");
+    	String result= this.model.solveMeCVC2();
     	if( result=="") {
     		txtResult.appendText("Errore risoluzione problema");
     	}else {
@@ -86,14 +86,8 @@ public class FXMLController {
     public void setModel(Model model) {
 		this.model = model;
 		this.boxTxt.getItems().clear();
-    	this.boxTxt.getItems().add("prova.txt");
-    	this.boxTxt.getItems().add("prova2.txt");
-    	this.boxTxt.getItems().add("prova3.txt");
-    	this.boxTxt.getItems().add("Treni_Roma.txt");
-    	this.boxTxt.getItems().add("celegance_453_2025_conv.txt");
-    	this.boxTxt.getItems().add("anna_138_493_conv.txt");
-    	this.boxTxt.getItems().add("yeast1.txt");
-    	this.boxTxt.getItems().add("C:\\Users\\Simona\\Desktop\\PoliTo\\TESI\\nuove_istanze\\bio-DM-LC.edges");
+    	this.boxTxt.getItems().add("email-univ.edges");
+    	this.boxTxt.getItems().add("C:\\Users\\Simona\\Desktop\\PoliTo\\TESI\\istanze\\n4c6-b15.mtx");
     		
 	}
 }
